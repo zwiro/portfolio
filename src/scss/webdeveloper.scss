@@ -1,0 +1,88 @@
+#homepage-webdev {
+  animation: fill 1s ease forwards 3s,
+    webdev-rotate-animation 1s ease-in-out forwards 3s;
+  position: absolute;
+  transform: translateY(-25%) translateX(-10%);
+}
+
+#homepage-webdev path:nth-child(1) {
+  stroke-dashoffset: 292px;
+  stroke-dasharray: 292px;
+  animation: name-animation 1s ease forwards;
+}
+#homepage-webdev path:nth-child(2) {
+  stroke-dashoffset: 219px;
+  stroke-dasharray: 219px;
+  animation: name-animation 1s ease forwards 1.2s;
+}
+#homepage-webdev path:nth-child(3) {
+  stroke-dashoffset: 235px;
+  stroke-dasharray: 235px;
+  animation: name-animation 1s ease forwards 2.4s;
+}
+#homepage-webdev path:nth-child(4) {
+  stroke-dashoffset: 244px;
+  stroke-dasharray: 244px;
+  animation: name-animation 1s ease forwards;
+}
+#homepage-webdev path:nth-child(5) {
+  stroke-dashoffset: 219px;
+  stroke-dasharray: 219px;
+  animation: name-animation 1s ease forwards 0.3s;
+}
+#homepage-webdev path:nth-child(6) {
+  stroke-dashoffset: 140px;
+  stroke-dasharray: 140px;
+  animation: name-animation 1s ease forwards 0.6s;
+}
+#homepage-webdev path:nth-child(7) {
+  stroke-dashoffset: 219px;
+  stroke-dasharray: 219px;
+  animation: name-animation 1s ease forwards 0.9s;
+}
+#homepage-webdev path:nth-child(8) {
+  stroke-dashoffset: 103px;
+  stroke-dasharray: 103px;
+  animation: name-animation 1s ease forwards 1.2s;
+}
+#homepage-webdev path:nth-child(9) {
+  stroke-dashoffset: 175px;
+  stroke-dasharray: 175px;
+  animation: name-animation 1s ease forwards 1.5s;
+}
+#homepage-webdev path:nth-child(10) {
+  stroke-dashoffset: 233px;
+  stroke-dasharray: 233px;
+  animation: name-animation 1s ease forwards 1.8s;
+}
+#homepage-webdev path:nth-child(11) {
+  stroke-dashoffset: 219px;
+  stroke-dasharray: 219px;
+  animation: name-animation 1s ease forwards 2.1s;
+}
+#homepage-webdev path:nth-child(12) {
+  stroke-dashoffset: 118px;
+  stroke-dasharray: 118px;
+  animation: name-animation 1s ease forwards 2.4s;
+}
+
+@keyframes name-animation {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes webdev-rotate-animation {
+  100% {
+    rotate: -20deg;
+  }
+}

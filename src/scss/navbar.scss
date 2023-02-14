@@ -1,0 +1,135 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.navbar {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  transform: translateY(-200%);
+  animation: navbar-animation 500ms ease-in-out forwards 3s;
+
+  @include lg-screen {
+    padding-inline: 5rem;
+  }
+
+  @include xl-screen {
+    padding-inline: 10rem;
+  }
+
+  &__logo {
+    display: flex;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    cursor: pointer;
+
+    @include lg-screen {
+      font-size: 2rem;
+    }
+
+    &:hover {
+      rotate: 360deg;
+      transition: rotate 300ms ease-in-out;
+    }
+  }
+
+  &__logo-bg {
+    background-color: $secondary-black;
+    color: $primary-blue;
+    padding: 1.75rem 0.5rem;
+    position: relative;
+    rotate: -15deg;
+    height: 2rem;
+    width: 5ch;
+
+    &--second {
+      z-index: -1;
+      transform: translateX(-20%);
+    }
+  }
+
+  &__logo-text {
+    position: absolute;
+    rotate: 15deg;
+    transform: translateY(-25%);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    font-weight: $font-bold;
+    font-size: 1rem;
+
+    @include xl-screen {
+      gap: 6rem;
+    }
+
+    @include lg-screen {
+      font-size: 1.5rem;
+    }
+
+    &--mobile {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 6rem;
+      padding: 8rem 1rem 1rem 1rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      color: $primary-blue;
+    }
+
+    &:hover:after {
+      position: absolute;
+      content: " ";
+      width: 0%;
+      height: 0.25rem;
+      background-color: $primary-pink;
+      bottom: -0.5rem;
+      animation: navitem-underline-animation 300ms ease-in-out forwards;
+    }
+
+    &--active {
+      color: $primary-blue;
+    }
+  }
+
+  &__toggler {
+    margin-left: auto;
+    font-size: 2.5rem;
+    transition: transform 500ms ease-in-out;
+
+    &--opened {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__mobile {
+    background-color: $secondary-black;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    animation: mobile-menu-animation 500ms ease-in-out;
+  }
+}
+
+@keyframes navbar-animation {
+  100% {
+    transform: translateY(0);
+  }
+}

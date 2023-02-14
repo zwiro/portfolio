@@ -1,0 +1,67 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.aboutpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title-bg {
+    background-color: $primary-blue;
+    rotate: -15deg;
+    padding: 1rem;
+    position: relative;
+    width: 8rem;
+    height: 4rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-shadow: 3px 3px 0px #f72585;
+    font-weight: $font-bold;
+    position: absolute;
+    rotate: 15deg;
+    top: -1rem;
+  }
+
+  &__text {
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+  }
+
+  &__accent {
+    color: $primary-pink;
+
+    &--blue {
+      color: $primary-blue;
+    }
+  }
+
+  &__techs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__tech {
+    background-color: $secondary-black;
+    padding: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  &__tech-name {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}

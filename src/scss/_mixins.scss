@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+@mixin sm-screen {
+  @media (min-width: $sm-screen) {
+    @content;
+  }
+}
+@mixin md-screen {
+  @media (min-width: $md-screen) {
+    @content;
+  }
+}
+@mixin lg-screen {
+  @media (min-width: $lg-screen) {
+    @content;
+  }
+}
+@mixin xl-screen {
+  @media (min-width: $xl-screen) {
+    @content;
+  }
+}
+@mixin xxl-screen {
+  @media (min-width: $xxl-screen) {
+    @content;
+  }
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,27 @@
+@use "variables" as *;
+@use "mixins" as m;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+body {
+  background-color: $bg-color;
+  background-image: url("../assets/background.png");
+  background-size: auto 100vh;
+  font-family: "Quicksand", sans-serif;
+  color: $text-color;
+}
+
+main {
+  padding-inline: 3rem;
+
+  @include m.lg-screen {
+    padding-inline: 5rem;
+  }
+
+  @include m.xl-screen {
+    padding-inline: 10rem;
+  }
+}
+
+section {
+  height: 100vh;
+}

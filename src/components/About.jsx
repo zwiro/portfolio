@@ -48,7 +48,7 @@ function About() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.5,
+        duration: 1,
       },
     },
   }
@@ -58,51 +58,58 @@ function About() {
     show: { opacity: 1 },
   }
 
+  const paragraph = {
+    hidden: { x: "-150%" },
+    show: { x: "0" },
+  }
+
   return (
     <section id="about" className="aboutpage">
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
-        viewport={{ once: true }}
         className="aboutpage__title-bg"
       >
         <span className="aboutpage__title">About me</span>
       </motion.div>
       <div className="aboutpage__text">
         <motion.div variants={container} initial="hidden" whileInView="show">
-          <motion.p variants={item}>
+          <motion.p variants={paragraph}>
             Self taught web <span className="aboutpage__accent">developer</span>{" "}
-            with passion for coding.
+            with passion for coding. 💻
           </motion.p>
-          <motion.p variants={item}>
-            Fast <span className="aboutpage__accent">learner</span> constantly
-            involved in learning new things.
+          <motion.p variants={paragraph}>
+            Fast <span className="aboutpage__accent">learner</span> dedicated to
+            learning new things. 👨‍🏫
           </motion.p>
-          <motion.p variants={item}>
+          <motion.p variants={paragraph}>
             Hard working and ready to face any{" "}
-            <span className="aboutpage__accent">challenge</span>.
+            <span className="aboutpage__accent">challenge</span>. 🥊
           </motion.p>
-          <motion.p variants={item}>
+          <motion.p variants={paragraph}>
             Besides coding my hobby is looking into{" "}
             <span className="aboutpage__accent aboutpage__accent--blue">
               space
             </span>{" "}
-            through an 8 inch tube.
+            through an 8 inch tube. 🔭
           </motion.p>
         </motion.div>
         <div>
-          <p className="aboutpage__skills">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="aboutpage__skills"
+          >
             Some of the{" "}
             <span className="aboutpage__accent aboutpage__accent--blue">
               technologies
             </span>{" "}
             that i have been using in my projects are:
-          </p>
+          </motion.p>
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
             className="aboutpage__techs"
           >
             {techs.map((tech, i) => (

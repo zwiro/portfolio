@@ -133,3 +133,9 @@
     transform: translateY(0);
   }
 }
+
+@keyframes navitem-underline-animation {
+  100% {
+    width: 100%;
+  }
+}

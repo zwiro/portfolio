@@ -7,6 +7,8 @@ import {
   SiReact,
   SiJavascript,
 } from "react-icons/si"
+import Tilt from "react-parallax-tilt"
+import { motion } from "framer-motion"
 
 function About() {
   const techs = [
@@ -35,45 +37,83 @@ function About() {
       icon: <SiMongodb fill="#00ED64" />,
     },
     {
-      name: "Redux Toolkit",
+      name: "Redux",
       icon: <SiRedux fill="#ba8fff" />,
     },
   ]
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.5,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  }
+
   return (
     <section id="about" className="aboutpage">
-      <div className="aboutpage__title-bg">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        className="aboutpage__title-bg"
+      >
         <span className="aboutpage__title">About me</span>
-      </div>
+      </motion.div>
       <div className="aboutpage__text">
-        <p>
-          Self taught web <span className="aboutpage__accent">developer</span>{" "}
-          with passion for coding.
-          <br />
-          <br />
-          Fast <span className="aboutpage__accent">learner</span> constantly
-          involved in learning new things.
-          <br />
-          <br />
-          Hard working and ready to face any{" "}
-          <span className="aboutpage__accent">challenge</span>.
-          <br />
-          <br />
-          Besides coding my hobby is looking into{" "}
-          <span className="aboutpage__accent--blue">space</span> through an 8
-          inch tube.
-        </p>
-        <p>
-          Some of the{" "}
-          <span className="aboutpage__accent--blue">technologies</span> that i
-          have been using in my projects are:
-        </p>
-        <div className="aboutpage__techs">
-          {techs.map((tech, i) => (
-            <div key={`${tech}-${i}`} className="aboutpage__tech">
-              {tech.icon}
-              <span className="aboutpage__tech-name">{tech.name}</span>
-            </div>
-          ))}
+        <motion.div variants={container} initial="hidden" whileInView="show">
+          <motion.p variants={item}>
+            Self taught web <span className="aboutpage__accent">developer</span>{" "}
+            with passion for coding.
+          </motion.p>
+          <motion.p variants={item}>
+            Fast <span className="aboutpage__accent">learner</span> constantly
+            involved in learning new things.
+          </motion.p>
+          <motion.p variants={item}>
+            Hard working and ready to face any{" "}
+            <span className="aboutpage__accent">challenge</span>.
+          </motion.p>
+          <motion.p variants={item}>
+            Besides coding my hobby is looking into{" "}
+            <span className="aboutpage__accent aboutpage__accent--blue">
+              space
+            </span>{" "}
+            through an 8 inch tube.
+          </motion.p>
+        </motion.div>
+        <div>
+          <p className="aboutpage__skills">
+            Some of the{" "}
+            <span className="aboutpage__accent aboutpage__accent--blue">
+              technologies
+            </span>{" "}
+            that i have been using in my projects are:
+          </p>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="aboutpage__techs"
+          >
+            {techs.map((tech, i) => (
+              <Tilt key={`${tech}-${i}`} tiltReverse>
+                <motion.div variants={item} className="aboutpage__tech">
+                  <div className="aboutpage__tech-icon">{tech.icon}</div>
+                  <span className="aboutpage__tech-name">{tech.name}</span>
+                </motion.div>
+              </Tilt>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

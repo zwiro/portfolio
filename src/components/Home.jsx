@@ -2,6 +2,7 @@ import Name from "./Name"
 import WebDeveloper from "./WebDeveloper"
 import "../scss/home.scss"
 import { BsFillArrowDownCircleFill } from "react-icons/bs"
+import { Link } from "react-scroll"
 
 function Home() {
   return (
@@ -19,7 +20,9 @@ function Home() {
         src="/src/assets/remote-team.png"
         alt="People working on computers"
       />
-      <BsFillArrowDownCircleFill className="homepage__arrow" />
+      <Link to="about" smooth spy tabIndex={5}>
+        <BsFillArrowDownCircleFill className="homepage__arrow" />
+      </Link>
     </section>
   )
 }

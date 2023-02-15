@@ -76,22 +76,22 @@ function About() {
         <motion.div variants={container} initial="hidden" whileInView="show">
           <motion.p variants={paragraph}>
             Self taught web <span className="aboutpage__accent">developer</span>{" "}
-            with passion for coding. 💻
+            with passion for coding 💻
           </motion.p>
           <motion.p variants={paragraph}>
             Fast <span className="aboutpage__accent">learner</span> dedicated to
-            learning new things. 👨‍🏫
+            learning new things 👨‍🏫
           </motion.p>
           <motion.p variants={paragraph}>
             Hard working and ready to face any{" "}
-            <span className="aboutpage__accent">challenge</span>. 🥊
+            <span className="aboutpage__accent">challenge</span> 🥊
           </motion.p>
           <motion.p variants={paragraph}>
             Besides coding my hobby is looking into{" "}
             <span className="aboutpage__accent aboutpage__accent--blue">
               space
             </span>{" "}
-            through an 8 inch tube. 🔭
+            through an 8 inch tube 🔭
           </motion.p>
         </motion.div>
         <div>

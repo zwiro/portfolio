@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { AiOutlineMenuFold } from "react-icons/ai"
+import { AnimatePresence, motion } from "framer-motion"
 
 function MobileMenu({ children }) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false)
@@ -12,7 +13,19 @@ function MobileMenu({ children }) {
         } navbar__toggler`}
         onClick={() => setMobileMenuOpened((prevState) => !prevState)}
       />
-      {mobileMenuOpened && <div className="navbar__mobile">{children}</div>}
+      <AnimatePresence>
+        {mobileMenuOpened && (
+          <motion.div
+            initial={{ x: "200%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "200%" }}
+            transition={{ type: "tween" }}
+            className="navbar__mobile"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

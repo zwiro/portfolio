@@ -78,6 +78,9 @@
       flex-direction: column;
       gap: 6rem;
       padding: 8rem 1rem 1rem 1rem;
+      -webkit-box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 1);
+      -moz-box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 1);
+      box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 1);
     }
   }
 

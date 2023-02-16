@@ -63,7 +63,6 @@
     &:hover {
       filter: brightness(1.5);
       background-position: bottom;
-      scale: 1.1;
     }
 
     &:hover .projects__short-description {
@@ -163,9 +162,12 @@
     color: $text-color;
     font-weight: $font-bold;
     transition: all 300ms ease-in-out;
+    border: 1px solid transparent;
 
     &:hover {
-      scale: 1.25;
+      background-color: transparent;
+      color: $primary-pink;
+      border-color: $primary-pink;
     }
   }
 }

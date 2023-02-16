@@ -1,5 +1,5 @@
 @use "variables" as *;
-@use "mixins" as m;
+@use "mixins" as *;
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
 
 body {
@@ -8,16 +8,17 @@ body {
   background-size: auto 100vh;
   font-family: "Quicksand", sans-serif;
   color: $text-color;
+  overflow-x: hidden;
 }
 
 main {
   padding-inline: 3rem;
 
-  @include m.lg-screen {
+  @include lg-screen {
     padding-inline: 5rem;
   }
 
-  @include m.xl-screen {
+  @include xl-screen {
     padding-inline: 10rem;
   }
 }

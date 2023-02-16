@@ -15,7 +15,7 @@ function MobileMenu({ children }) {
       />
       <AnimatePresence>
         {mobileMenuOpened && (
-          <motion.div
+          <motion.aside
             initial={{ x: "200%" }}
             animate={{ x: 0 }}
             exit={{ x: "200%" }}
@@ -23,7 +23,7 @@ function MobileMenu({ children }) {
             className="navbar__mobile"
           >
             {children}
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
     </>

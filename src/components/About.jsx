@@ -65,14 +65,6 @@ function About() {
   }
 
   return (
-    // <section id="about" className="aboutpage">
-    //   <motion.div
-    //     initial={{ scale: 0 }}
-    //     whileInView={{ scale: 1 }}
-    //     className="aboutpage__title-bg"
-    //   >
-    //     <span className="aboutpage__title">About me</span>
-    //   </motion.div>
     <Container page="about" title="About me">
       <div className="about__text">
         <motion.div variants={container} initial="hidden" whileInView="show">

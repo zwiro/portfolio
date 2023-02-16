@@ -7,6 +7,7 @@ import otherImage from "../assets/github.png"
 import { useState } from "react"
 import useMediaQuery from "../hooks/useMediaQuery"
 import Container from "./Container"
+import { AiOutlineClose } from "react-icons/ai"
 
 function Projects() {
   const projects = [
@@ -27,7 +28,7 @@ function Projects() {
       image: recipebaseImage,
     },
     {
-      title: "Wordguesser - A Wordle clone",
+      title: "Wordguesser",
       description:
         "Word guessing game inspired by Wordle made in vanilla JavaScript.",
       techs: ["Vanilla JavaScript"],
@@ -35,7 +36,7 @@ function Projects() {
       image: wordguesserImage,
     },
     {
-      title: "Todo App",
+      title: "Todo",
       description:
         "Todo App with dark mode made in React. Design from frontendmentor.io.",
       techs: ["React.js", "Sass"],
@@ -43,7 +44,7 @@ function Projects() {
       image: todoAppImage,
     },
     {
-      title: "Other projects",
+      title: "More",
       description: "Check out my other projects on my github.",
       techs: [],
       link: "https://github.com/zwiro",
@@ -55,15 +56,13 @@ function Projects() {
 
   const isDesktop = useMediaQuery("(min-width: 640px")
 
+  const openCard = (clickedCard) => {
+    if (activeCard !== null) {
+      setActiveCard(null)
+    } else setActiveCard(clickedCard)
+  }
+
   return (
-    // <section id="projects" className="projects">
-    //   <motion.div
-    //     initial={{ scale: 0 }}
-    //     whileInView={{ scale: 1 }}
-    //     className="projects__title-bg"
-    //   >
-    //     <span className="projects__title">My projects</span>
-    //   </motion.div>
     <Container page="projects" title="My projects">
       <div
         className={`${!isDesktop && "projects__grid--mobile"} projects__grid`}
@@ -73,11 +72,21 @@ function Projects() {
             layout
             key={`${project}-${i}`}
             className={`${
-              activeCard === i && "projects__project--active"
+              activeCard === i
+                ? "projects__project--active"
+                : activeCard !== null && "projects__project--inactive"
             } projects__project`}
-            onClick={isDesktop ? () => setActiveCard(i) : undefined}
+            onClick={() => openCard(i)}
           >
-            <p className="projects__project-title">{project.title}</p>
+            <div className="projects__project-header">
+              <p className="projects__project-title">{project.title}</p>
+              {activeCard === i && (
+                <AiOutlineClose
+                  className="projects__project-close-btn"
+                  onClick={openCard}
+                />
+              )}
+            </div>
             {activeCard === i && (
               <p className="projects__techs">
                 {project.techs.map((tech, i) => (
@@ -94,7 +103,7 @@ function Projects() {
             />
             {activeCard === i && (
               <>
-                <p className="project__description">{project.description}</p>
+                <p className="projects__description">{project.description}</p>
                 <a className="projects__link" href={project.link}>
                   Visit site
                 </a>
@@ -104,7 +113,6 @@ function Projects() {
         ))}
       </div>
     </Container>
-    // </section>
   )
 }
 

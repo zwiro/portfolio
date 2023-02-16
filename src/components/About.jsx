@@ -9,6 +9,7 @@ import {
 } from "react-icons/si"
 import Tilt from "react-parallax-tilt"
 import { motion } from "framer-motion"
+import Container from "./Container"
 
 function About() {
   const techs = [
@@ -64,33 +65,32 @@ function About() {
   }
 
   return (
-    <section id="about" className="aboutpage">
-      <motion.div
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        className="aboutpage__title-bg"
-      >
-        <span className="aboutpage__title">About me</span>
-      </motion.div>
-      <div className="aboutpage__text">
+    // <section id="about" className="aboutpage">
+    //   <motion.div
+    //     initial={{ scale: 0 }}
+    //     whileInView={{ scale: 1 }}
+    //     className="aboutpage__title-bg"
+    //   >
+    //     <span className="aboutpage__title">About me</span>
+    //   </motion.div>
+    <Container page="about" title="About me">
+      <div className="about__text">
         <motion.div variants={container} initial="hidden" whileInView="show">
           <motion.p variants={paragraph}>
-            Self taught web <span className="aboutpage__accent">developer</span>{" "}
+            Self taught web <span className="about__accent">developer</span>{" "}
             with passion for coding 💻
           </motion.p>
           <motion.p variants={paragraph}>
-            Fast <span className="aboutpage__accent">learner</span> dedicated to
+            Fast <span className="about__accent">learner</span> dedicated to
             learning new things 👨‍🏫
           </motion.p>
           <motion.p variants={paragraph}>
             Hard working and ready to face any{" "}
-            <span className="aboutpage__accent">challenge</span> 🥊
+            <span className="about__accent">challenge</span> 🥊
           </motion.p>
           <motion.p variants={paragraph}>
             Besides coding my hobby is looking into{" "}
-            <span className="aboutpage__accent aboutpage__accent--blue">
-              space
-            </span>{" "}
+            <span className="about__accent about__accent--blue">space</span>{" "}
             through an 8 inch tube 🔭
           </motion.p>
         </motion.div>
@@ -98,10 +98,10 @@ function About() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="aboutpage__skills"
+            className="about__skills"
           >
             Some of the{" "}
-            <span className="aboutpage__accent aboutpage__accent--blue">
+            <span className="about__accent about__accent--blue">
               technologies
             </span>{" "}
             that i have been using in my projects are:
@@ -110,20 +110,20 @@ function About() {
             variants={container}
             initial="hidden"
             whileInView="show"
-            className="aboutpage__techs"
+            className="about__techs"
           >
             {techs.map((tech, i) => (
               <Tilt key={`${tech}-${i}`} tiltReverse>
-                <motion.div variants={item} className="aboutpage__tech">
-                  <div className="aboutpage__tech-icon">{tech.icon}</div>
-                  <span className="aboutpage__tech-name">{tech.name}</span>
+                <motion.div variants={item} className="about__tech">
+                  <div className="about__tech-icon">{tech.icon}</div>
+                  <span className="about__tech-name">{tech.name}</span>
                 </motion.div>
               </Tilt>
             ))}
           </motion.div>
         </div>
       </div>
-    </section>
+    </Container>
   )
 }
 

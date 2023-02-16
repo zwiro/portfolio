@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-.aboutpage {
+.about {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,9 +39,11 @@
   }
 
   &__text {
-    @include flex-center;
+    // @include flex-center;
+    display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
     padding-top: 2rem;
     font-size: clamp(1rem, 1.5vw + 0.6rem, 2rem);
     gap: 1rem;
@@ -49,11 +51,10 @@
       flex-direction: row;
     }
 
-    & > div:first-child {
+    & > div {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      height: 100%;
+      flex-direction: column;
     }
 
     & > p {

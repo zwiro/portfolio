@@ -6,6 +6,7 @@ import wordguesserImage from "../assets/wordguesser.png"
 import otherImage from "../assets/github.png"
 import { useState } from "react"
 import useMediaQuery from "../hooks/useMediaQuery"
+import Container from "./Container"
 
 function Projects() {
   const projects = [
@@ -55,14 +56,15 @@ function Projects() {
   const isDesktop = useMediaQuery("(min-width: 640px")
 
   return (
-    <section id="projects" className="projects">
-      <motion.div
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        className="projects__title-bg"
-      >
-        <span className="projects__title">My projects</span>
-      </motion.div>
+    // <section id="projects" className="projects">
+    //   <motion.div
+    //     initial={{ scale: 0 }}
+    //     whileInView={{ scale: 1 }}
+    //     className="projects__title-bg"
+    //   >
+    //     <span className="projects__title">My projects</span>
+    //   </motion.div>
+    <Container page="projects" title="My projects">
       <div
         className={`${!isDesktop && "projects__grid--mobile"} projects__grid`}
       >
@@ -101,7 +103,8 @@ function Projects() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </Container>
+    // </section>
   )
 }
 

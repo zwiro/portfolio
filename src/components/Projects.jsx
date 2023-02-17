@@ -34,7 +34,7 @@ function Projects() {
         "Word guessing game inspired by Wordle made in vanilla JavaScript. User types 5 letter words and then gets a feedback: yellow color means the letter is present in word but isn't on proper position and green color indicates that letter is correctly positioned.",
       shortDescription:
         "Word guessing game inspired by Wordle made in vanilla JavaScript.",
-      techs: ["Vanilla JavaScript"],
+      techs: ["JavaScript"],
       link: "https://zwiro.github.io/wordle-clone/",
       image: wordguesserImage,
     },
@@ -58,6 +58,8 @@ function Projects() {
   ]
 
   const [activeCard, setActiveCard] = useState(null)
+  const [cursorPosition, setCursorPosition] = useState({})
+  const [projectBgPosition, setProjectBgPosition] = useState(undefined)
 
   const container = {
     hidden: { opacity: 0 },
@@ -80,12 +82,29 @@ function Projects() {
       e.stopPropagation()
       setActiveCard(null)
     })
-    return () =>
+    document.body.addEventListener("mousemove", (e) => {
+      setCursorPosition({
+        x: Math.floor((e.clientX / window.innerWidth) * 100),
+        y: Math.floor((e.clientY / window.innerHeight) * 100),
+      })
+    })
+    return () => {
       document.body.removeEventListener("click", (e) => {
         e.stopPropagation()
         setActiveCard(null)
       })
+      document.body.removeEventListener("mousemove", (e) => {
+        setCursorPosition({
+          x: Math.floor((e.clientX / window.innerWidth) * 100),
+          y: Math.floor((e.clientY / window.innerHeight) * 100),
+        })
+      })
+    }
   }, [])
+
+  useEffect(() => {
+    setProjectBgPosition(`-${cursorPosition.x}% ${cursorPosition.y}%`)
+  }, [cursorPosition])
 
   return (
     <Container page="projects" title="My projects">
@@ -111,6 +130,7 @@ function Projects() {
             }}
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('${project.image}')`,
+              backgroundPosition: activeCard !== null && projectBgPosition,
             }}
           >
             <div className="projects__project-header">

@@ -103,7 +103,7 @@ function Projects() {
   }, [])
 
   useEffect(() => {
-    setProjectBgPosition(`-${cursorPosition.x}% ${cursorPosition.y}%`)
+    setProjectBgPosition(`${cursorPosition.x}% -${cursorPosition.y}%`)
   }, [cursorPosition])
 
   return (

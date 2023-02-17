@@ -38,25 +38,30 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault()
-    if (formData.name === "") {
+    if (formData.name === "" || !/[a-zA-Z]/.test(formData.name)) {
       setValidationError((prevError) => ({
         ...prevError,
         name: "Name can't be empty.",
       }))
     }
-    if (formData.email === "") {
+    if (formData.email === "" || !/[a-zA-Z]/.test(formData.email)) {
       setValidationError((prevError) => ({
         ...prevError,
         email: "Email can't be empty.",
       }))
     }
-    if (formData.message === "") {
+    if (formData.message === "" || !/[a-zA-Z]/.test(formData.message)) {
       setValidationError((prevError) => ({
         ...prevError,
         message: "Message can't be empty.",
       }))
     }
-    if (validationError) return
+    if (
+      validationError.name ||
+      validationError.email ||
+      validationError.message
+    )
+      return
 
     emailjs
       .sendForm(
@@ -73,6 +78,11 @@ function Contact() {
           console.log(error.text)
         }
       )
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    })
   }
 
   return (

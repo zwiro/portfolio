@@ -7,7 +7,7 @@ import "./scss/global.scss"
 import { useEffect, useState } from "react"
 
 function App() {
-  const [scrollPosition, setScrollPosition] = useState("")
+  const [scrollPosition, setScrollPosition] = useState(0)
   const [bgPosition, setBgPosition] = useState(undefined)
 
   useEffect(() => {
@@ -32,24 +32,15 @@ function App() {
     }
   }, [])
 
-  console.log(
-    Math.floor(
-      (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100
-    )
-  )
-
-  console.log(bgPosition)
-  console.log(scrollPosition)
-
   useEffect(() => {
     setBgPosition(
-      `${Math.floor(Math.random() * (200 - -500) + -500)}% ${scrollPosition}%`
+      `${Math.floor(Math.random() * 1001) - 500}% ${scrollPosition}%`
     )
     document.body.animate(
       {
         backgroundPosition: bgPosition,
       },
-      { duration: 100000, fill: "forwards" }
+      { duration: 500000, fill: "forwards" }
     )
   }, [scrollPosition])
 

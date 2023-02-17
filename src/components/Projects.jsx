@@ -41,8 +41,8 @@ function Projects() {
     {
       title: "Todo",
       description:
-        "Todo App made in React.js. User can add, delete and check elements on the list. Also app theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
-      shortDescription: "Todo App with dark mode made in React.",
+        "Todo App made in React.js. User can add, delete and check elements on the list. Also the theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
+      shortDescription: "Todo App made in React.",
       techs: ["React.js", "Sass"],
       link: "https://zwiro.github.io/todo-app/",
       image: todoAppImage,
@@ -103,7 +103,7 @@ function Projects() {
   }, [])
 
   useEffect(() => {
-    setProjectBgPosition(`${cursorPosition.x}% -${cursorPosition.y}%`)
+    setProjectBgPosition(`-${cursorPosition.x}% ${cursorPosition.y}%`)
   }, [cursorPosition])
 
   return (

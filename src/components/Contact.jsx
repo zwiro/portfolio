@@ -139,14 +139,7 @@ function Contact() {
   return (
     <Container page="contact" title="Contact me">
       <div className="contact__wrapper">
-        <form
-          className="contact__form"
-          ref={form}
-          onSubmit={sendEmail}
-          initial={{ width: 0, opacity: 0 }}
-          whileInView={{ width: "100%", opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
+        <form className="contact__form" ref={form} onSubmit={sendEmail}>
           <AnimatePresence>
             {messageSent && (
               <motion.svg

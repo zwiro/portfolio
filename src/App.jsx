@@ -4,45 +4,23 @@ import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import "./scss/global.scss"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 function App() {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [bgPosition, setBgPosition] = useState(undefined)
-
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollPosition(
-        Math.floor(
-          (window.scrollY / (document.body.offsetHeight - window.innerHeight)) *
-            100
-        )
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset
+      document.body.style.backgroundPositionY = scrollPosition * 0.5 + "px"
+      document.body.animate(
+        { backgroundPositionX: scrollPosition + "px" },
+        { duration: 1000000, fill: "forwards" }
       )
-    })
+    }
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", () => {
-        setScrollPosition(
-          Math.floor(
-            (window.scrollY /
-              (document.body.offsetHeight - window.innerHeight)) *
-              100
-          )
-        )
-      })
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-
-  useEffect(() => {
-    setBgPosition(
-      `${Math.floor(Math.random() * 1001) - 500}% ${scrollPosition}%`
-    )
-    document.body.animate(
-      {
-        backgroundPosition: bgPosition,
-      },
-      { duration: 500000, fill: "forwards" }
-    )
-  }, [scrollPosition])
 
   return (
     <>

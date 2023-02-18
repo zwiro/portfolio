@@ -26,3 +26,16 @@ main {
 section {
   min-height: 100vh;
 }
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-pink;
+}

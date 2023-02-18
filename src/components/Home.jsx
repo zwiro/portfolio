@@ -4,6 +4,7 @@ import "../scss/home.scss"
 import { BsFillArrowDownCircleFill } from "react-icons/bs"
 import { Link } from "react-scroll"
 import { motion } from "framer-motion"
+import homepageImage from "../assets/remote-team.png"
 
 function Home() {
   const box = {
@@ -32,7 +33,7 @@ function Home() {
       </div>
       <img
         className="homepage__image"
-        src="/src/assets/remote-team.png"
+        src={homepageImage}
         alt="People working on computers"
       />
       <Link to="about" smooth spy tabIndex={5}>

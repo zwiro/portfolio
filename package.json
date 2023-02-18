@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://zwiro.github.io/portfolio/",
+  "homepage": "https://zyrek.dev/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

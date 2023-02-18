@@ -104,7 +104,6 @@ function Name() {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          {/* <feOffset dx="3" dy="3" /> */}
           <feComposite in2="hardAlpha" operator="out" />
           <feColorMatrix
             type="matrix"

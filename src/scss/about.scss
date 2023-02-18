@@ -2,9 +2,7 @@
 @use "mixins" as *;
 
 .about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   flex-direction: column;
   @include sm-screen {
     gap: 2rem;
@@ -39,11 +37,9 @@
   }
 
   &__text {
-    // @include flex-center;
-    display: flex;
+    @include flex-between;
     flex-direction: column;
     text-align: center;
-    justify-content: space-between;
     padding-top: 2rem;
     font-size: clamp(1rem, 1.5vw + 0.6rem, 2rem);
     gap: 1rem;
@@ -52,8 +48,7 @@
     }
 
     & > div {
-      display: flex;
-      justify-content: space-between;
+      @include flex-between;
       flex-direction: column;
     }
 

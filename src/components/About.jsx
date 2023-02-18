@@ -49,14 +49,13 @@ function About() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 1,
       },
     },
   }
 
   const item = {
     hidden: { opacity: 0 },
-    show: { opacity: 1 },
+    show: { opacity: 1, transition: { duration: 1 } },
   }
 
   const paragraph = {

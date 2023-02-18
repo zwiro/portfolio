@@ -171,6 +171,7 @@ function Contact() {
               variants={input}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="contact__input"
               type="text"
               name="user_name"
@@ -196,6 +197,7 @@ function Contact() {
               variants={input}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="contact__input"
               type="email"
               name="user_email"
@@ -220,6 +222,7 @@ function Contact() {
               variants={input}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="contact__textarea"
               rows={4}
               name="message"
@@ -246,6 +249,7 @@ function Contact() {
             variants={container}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
             className="contact__socials"
           >
             {socialMedia.map((social, i) => (

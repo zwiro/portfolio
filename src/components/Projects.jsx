@@ -112,6 +112,7 @@ function Projects() {
         variants={container}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
         className={` projects__grid`}
       >
         {projects.map((project, i) => (

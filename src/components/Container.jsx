@@ -6,6 +6,7 @@ function Container({ children, page, title }) {
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
         className={`${page}__title-bg`}
         layout
       >

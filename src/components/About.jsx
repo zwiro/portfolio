@@ -67,7 +67,12 @@ function About() {
   return (
     <Container page="about" title="About me">
       <div className="about__text">
-        <motion.div variants={container} initial="hidden" whileInView="show">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           <motion.p variants={paragraph}>
             Self taught web <span className="about__accent">developer</span>{" "}
             with passion for coding 💻
@@ -90,6 +95,7 @@ function About() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             className="about__skills"
           >
             Some of the{" "}
@@ -102,6 +108,7 @@ function About() {
             variants={container}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
             className="about__techs"
           >
             {techs.map((tech, i) => (

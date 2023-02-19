@@ -3,12 +3,38 @@ import useMediaQuery from "../hooks/useMediaQuery"
 import MobileMenu from "./MobileMenu"
 import NavbarItems from "./NavbarItems"
 import { Link } from "react-scroll"
-
+import { useState, useEffect } from "react"
+import { motion, useScroll } from "framer-motion"
 function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 640px)")
 
+  const { scrollY } = useScroll()
+  const [navHidden, setNavHidden] = useState()
+
+  function update() {
+    if (scrollY?.current < scrollY?.prev) {
+      setNavHidden(false)
+    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+      setNavHidden(true)
+    }
+  }
+
+  useEffect(() => {
+    return scrollY.onChange(() => update())
+  })
+
+  const navVariants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -25 },
+  }
+
   return (
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      variants={navVariants}
+      animate={navHidden ? "hidden" : "visible"}
+      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+    >
       {isDesktop && (
         <Link to="home" href="#home" smooth spy>
           <div className="navbar__logo">
@@ -26,7 +52,7 @@ function Navbar() {
           <NavbarItems />
         </MobileMenu>
       )}
-    </nav>
+    </motion.nav>
   )
 }
 

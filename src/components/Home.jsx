@@ -3,7 +3,6 @@ import WebDeveloper from "./WebDeveloper"
 import "../scss/home.scss"
 import { BsFillArrowDownCircleFill } from "react-icons/bs"
 import { motion } from "framer-motion"
-import homepageImage from "../assets/remote-team.png"
 
 function Home() {
   const box = {

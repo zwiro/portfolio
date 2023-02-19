@@ -111,12 +111,14 @@ function About() {
             className="about__techs"
           >
             {techs.map((tech, i) => (
-              <Tilt key={`${tech}-${i}`} tiltReverse>
-                <motion.div variants={item} className="about__tech">
-                  <div className="about__tech-icon">{tech.icon}</div>
-                  <span className="about__tech-name">{tech.name}</span>
-                </motion.div>
-              </Tilt>
+              <motion.div key={`${tech}-${i}`} variants={item}>
+                <Tilt tiltReverse>
+                  <motion.div className="about__tech">
+                    <div className="about__tech-icon">{tech.icon}</div>
+                    <span className="about__tech-name">{tech.name}</span>
+                  </motion.div>
+                </Tilt>
+              </motion.div>
             ))}
           </motion.div>
         </div>

@@ -32,11 +32,35 @@ function Home() {
           <WebDeveloper />
         </motion.div>
       </div>
-      <img
-        className="homepage__image"
-        src={homepageImage}
-        alt="People working on computers"
-      />
+      <div className="homepage__bio">
+        <h1 className="homepage__header">
+          H<span className="homepage__accent">e</span>ll
+          <span className="homepage__accent--blue">o</span> wo
+          <span className="homepage__accent">r</span>l
+          <span className="homepage__accent--blue">d</span>.
+        </h1>
+        <h2 className="homepage__subheader">
+          My name is{" "}
+          <span className="homepage__accent homepage__accent--name">
+            Przemysław
+          </span>{" "}
+          and I'm an aspiring{" "}
+          <span className="homepage__accent--blue">front-end developer</span>.
+        </h2>
+        <p className="homepage__paragraph">
+          I'm coding mainly in{" "}
+          <span className="homepage__accent--blue">React.js</span>.
+        </p>
+        <p className="homepage__paragraph">
+          Currently I'm learning{" "}
+          <span className="homepage__accent">TypeScript</span> and{" "}
+          <span className="homepage__accent--blue">Next.js</span>
+        </p>
+        <p className="homepage__paragraph">
+          <span className="homepage__accent">Scroll down</span> to learn more
+          about me!
+        </p>
+      </div>
       <BsFillArrowDownCircleFill className="homepage__arrow" />
     </section>
   )

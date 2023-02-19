@@ -58,7 +58,7 @@ function Projects() {
   ]
 
   const [activeCard, setActiveCard] = useState(null)
-  const [cursorPosition, setCursorPosition] = useState({})
+  const [cursorPosition, setCursorPosition] = useState()
   const [projectBgPosition, setProjectBgPosition] = useState(undefined)
 
   const container = {
@@ -83,10 +83,7 @@ function Projects() {
       setActiveCard(null)
     })
     document.body.addEventListener("mousemove", (e) => {
-      setCursorPosition({
-        x: Math.floor((e.clientX / window.innerWidth) * 100),
-        y: Math.floor((e.clientY / window.innerHeight) * 100),
-      })
+      setCursorPosition(Math.floor((e.clientY / window.innerHeight) * 100))
     })
     return () => {
       document.body.removeEventListener("click", (e) => {
@@ -94,16 +91,13 @@ function Projects() {
         setActiveCard(null)
       })
       document.body.removeEventListener("mousemove", (e) => {
-        setCursorPosition({
-          x: Math.floor((e.clientX / window.innerWidth) * 100),
-          y: Math.floor((e.clientY / window.innerHeight) * 100),
-        })
+        setCursorPosition(Math.floor((e.clientY / window.innerHeight) * 100))
       })
     }
   }, [])
 
   useEffect(() => {
-    setProjectBgPosition(`-${cursorPosition.x}% ${cursorPosition.y}%`)
+    setProjectBgPosition(`${cursorPosition}%`)
   }, [cursorPosition])
 
   return (
@@ -131,7 +125,7 @@ function Projects() {
             }}
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('${project.image}')`,
-              backgroundPosition: activeCard !== null && projectBgPosition,
+              backgroundPositionY: activeCard !== null && projectBgPosition,
             }}
           >
             <div className="projects__project-header">

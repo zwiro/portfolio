@@ -3,8 +3,8 @@ import useMediaQuery from "../hooks/useMediaQuery"
 import MobileMenu from "./MobileMenu"
 import NavbarItems from "./NavbarItems"
 import { Link } from "react-scroll"
-import { useState, useEffect } from "react"
-import { motion, useScroll } from "framer-motion"
+import { useState } from "react"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 640px)")
 
@@ -19,8 +19,8 @@ function Navbar() {
     }
   }
 
-  useEffect(() => {
-    return scrollY.onChange(() => update())
+  useMotionValueEvent(scrollY, "change", () => {
+    update()
   })
 
   const navVariants = {
@@ -32,7 +32,7 @@ function Navbar() {
     <motion.nav
       className="navbar"
       variants={navVariants}
-      animate={navHidden ? "hidden" : "visible"}
+      animate={isDesktop && navHidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {isDesktop && (

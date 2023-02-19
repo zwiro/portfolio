@@ -26,16 +26,17 @@ function Projects() {
         "Redux-Toolkit",
       ],
       link: "https://recipebase-7qn0.onrender.com/",
+      repo: "https://github.com/zwiro/mern-app-recipebase",
       image: recipebaseImage,
     },
     {
       title: "Wordguesser",
       description:
-        "Word guessing game inspired by Wordle made in vanilla JavaScript. User types 5 letter words and then gets a feedback: yellow color means the letter is present in word but isn't on proper position and green color indicates that letter is correctly positioned.",
-      shortDescription:
-        "Word guessing game inspired by Wordle made in vanilla JavaScript.",
+        "Wordle clone made in vanilla JavaScript. User types 5 letter words and then gets a feedback: yellow color means the letter is present in word but isn't on proper position and green color indicates that letter is correctly positioned.",
+      shortDescription: "Wordle clone made in vanilla JavaScript.",
       techs: ["JavaScript"],
       link: "https://zwiro.github.io/wordle-clone/",
+      repo: "https://github.com/zwiro/wordle-clone",
       image: wordguesserImage,
     },
     {
@@ -45,6 +46,7 @@ function Projects() {
       shortDescription: "Todo App made in React.",
       techs: ["React.js", "Sass"],
       link: "https://zwiro.github.io/todo-app/",
+      repo: "https://github.com/zwiro/todo-app",
       image: todoAppImage,
     },
     {
@@ -58,7 +60,7 @@ function Projects() {
   ]
 
   const [activeCard, setActiveCard] = useState(null)
-  const [cursorPosition, setCursorPosition] = useState({})
+  const [cursorPosition, setCursorPosition] = useState()
   const [projectBgPosition, setProjectBgPosition] = useState(undefined)
 
   const container = {
@@ -83,10 +85,7 @@ function Projects() {
       setActiveCard(null)
     })
     document.body.addEventListener("mousemove", (e) => {
-      setCursorPosition({
-        x: Math.floor((e.clientX / window.innerWidth) * 100),
-        y: Math.floor((e.clientY / window.innerHeight) * 100),
-      })
+      setCursorPosition(Math.floor((e.clientY / window.innerHeight) * 100))
     })
     return () => {
       document.body.removeEventListener("click", (e) => {
@@ -94,16 +93,13 @@ function Projects() {
         setActiveCard(null)
       })
       document.body.removeEventListener("mousemove", (e) => {
-        setCursorPosition({
-          x: Math.floor((e.clientX / window.innerWidth) * 100),
-          y: Math.floor((e.clientY / window.innerHeight) * 100),
-        })
+        setCursorPosition(Math.floor((e.clientY / window.innerHeight) * 100))
       })
     }
   }, [])
 
   useEffect(() => {
-    setProjectBgPosition(`-${cursorPosition.x}% ${cursorPosition.y}%`)
+    setProjectBgPosition(`${cursorPosition}%`)
   }, [cursorPosition])
 
   return (
@@ -131,7 +127,7 @@ function Projects() {
             }}
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('${project.image}')`,
-              backgroundPosition: activeCard !== null && projectBgPosition,
+              backgroundPositionY: activeCard !== null && projectBgPosition,
             }}
           >
             <div className="projects__project-header">
@@ -163,13 +159,22 @@ function Projects() {
             {activeCard === i && (
               <>
                 <p className="projects__description">{project.description}</p>
-                <a
-                  className="projects__link"
-                  target="_blank"
-                  href={project.link}
-                >
-                  Visit site
-                </a>
+                <div className="projects__links">
+                  <a
+                    className="projects__link projects__link--blue"
+                    target="_blank"
+                    href={project.repo}
+                  >
+                    Repository
+                  </a>
+                  <a
+                    className="projects__link"
+                    target="_blank"
+                    href={project.link}
+                  >
+                    Visit site
+                  </a>
+                </div>
               </>
             )}
           </motion.div>

@@ -72,7 +72,7 @@
       grid-column: 1/3;
       grid-row: 1/3;
       cursor: default;
-      transition: background-position 3000ms !important;
+      transition: background-position 10000ms !important;
 
       &:hover {
         filter: none;
@@ -152,6 +152,11 @@
     white-space: pre-wrap;
   }
 
+  &__links {
+    display: flex;
+    gap: 1rem;
+  }
+
   &__link {
     background-color: $primary-pink;
     padding: 0.5rem 1rem;
@@ -165,6 +170,15 @@
       background-color: transparent;
       color: $primary-pink;
       border-color: $primary-pink;
+    }
+
+    &--blue {
+      background-color: $primary-blue;
+
+      &:hover {
+        color: $primary-blue;
+        border-color: $primary-blue;
+      }
     }
   }
 }

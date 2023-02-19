@@ -10,7 +10,7 @@ function Container({ children, page, title }) {
         className={`${page}__title-bg`}
         layout
       >
-        <span className={`${page}__title`}>{title}</span>
+        <h2 className={`${page}__title`}>{title}</h2>
       </motion.div>
       {children}
     </section>

@@ -90,6 +90,8 @@
     gap: 0.5rem;
     cursor: pointer;
     transition: color 300ms ease-in-out;
+    color: unset;
+    text-decoration: none;
 
     &:hover {
       color: $primary-blue;

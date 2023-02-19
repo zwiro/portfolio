@@ -166,7 +166,9 @@ function Contact() {
             )}
           </AnimatePresence>
           <div>
-            <label className="contact__label">Name</label>
+            <label htmlFor="user_name" className="contact__label">
+              Name
+            </label>
             <motion.input
               variants={input}
               initial="hidden"
@@ -192,7 +194,9 @@ function Contact() {
             )}
           </div>
           <div>
-            <label className="contact__label">Email</label>
+            <label htmlFor="user_email" className="contact__label">
+              Email
+            </label>
             <motion.input
               variants={input}
               initial="hidden"
@@ -217,7 +221,9 @@ function Contact() {
             )}
           </div>
           <div>
-            <label className="contact__label">Message</label>
+            <label htmlFor="message" className="contact__label">
+              Message
+            </label>
             <motion.textarea
               variants={input}
               initial="hidden"
@@ -258,7 +264,12 @@ function Contact() {
                 className="contact__social"
                 key={`${social}-${i}`}
               >
-                <a href={social.link} target="_blank" className="contact__link">
+                <a
+                  href={social.link}
+                  target="_blank"
+                  className="contact__link"
+                  aria-label="Find me on social media"
+                >
                   {social.icon}
                 </a>
               </motion.div>

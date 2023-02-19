@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       {isDesktop && (
-        <Link to="home" smooth spy>
+        <Link to="home" href="#home" smooth spy>
           <div className="navbar__logo">
             <div className="navbar__logo-bg">
               <span className="navbar__logo-text">zyrek.dev</span>

@@ -29,8 +29,8 @@ function NavbarItems() {
             activeClass="navbar__link--active"
             smooth
             spy
-            tabIndex={i + 1}
             to={item.to}
+            href={`#${item.to}`}
           >
             {item.icon} {item.name}
           </Link>

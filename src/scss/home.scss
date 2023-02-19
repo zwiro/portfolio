@@ -53,7 +53,7 @@
     left: 50%;
     transform: translateX(-50%);
     scale: 2;
-    cursor: pointer;
+    // cursor: pointer;
     opacity: 0;
     animation: arrow-animation 1.5s ease-in-out infinite 4s;
   }

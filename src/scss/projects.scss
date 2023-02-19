@@ -152,6 +152,11 @@
     white-space: pre-wrap;
   }
 
+  &__links {
+    display: flex;
+    gap: 1rem;
+  }
+
   &__link {
     background-color: $primary-pink;
     padding: 0.5rem 1rem;
@@ -165,6 +170,15 @@
       background-color: transparent;
       color: $primary-pink;
       border-color: $primary-pink;
+    }
+
+    &--blue {
+      background-color: $primary-blue;
+
+      &:hover {
+        color: $primary-blue;
+        border-color: $primary-blue;
+      }
     }
   }
 }

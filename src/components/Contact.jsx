@@ -177,6 +177,7 @@ function Contact() {
               className="contact__input"
               type="text"
               name="user_name"
+              id="user_name"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,
@@ -205,6 +206,7 @@ function Contact() {
               className="contact__input"
               type="email"
               name="user_email"
+              id="user_email"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,
@@ -232,6 +234,7 @@ function Contact() {
               className="contact__textarea"
               rows={4}
               name="message"
+              id="message"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,

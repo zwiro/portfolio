@@ -24,8 +24,8 @@ function Navbar() {
   })
 
   const navVariants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -25 },
+    visible: { opacity: 1, y: 0, pointerEvents: "all" },
+    hidden: { opacity: 0, y: -25, pointerEvents: "none" },
   }
 
   return (

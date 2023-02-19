@@ -178,6 +178,7 @@ function Contact() {
               type="text"
               name="user_name"
               id="user_name"
+              placeholder="John"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,
@@ -207,6 +208,7 @@ function Contact() {
               type="email"
               name="user_email"
               id="user_email"
+              placeholder="john@example.com"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,
@@ -235,6 +237,7 @@ function Contact() {
               rows={4}
               name="message"
               id="message"
+              placeholder="Hi!"
               onChange={(e) => {
                 setValidationError((prevError) => ({
                   ...prevError,

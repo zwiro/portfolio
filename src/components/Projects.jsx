@@ -160,13 +160,15 @@ function Projects() {
               <>
                 <p className="projects__description">{project.description}</p>
                 <div className="projects__links">
-                  <a
-                    className="projects__link projects__link--blue"
-                    target="_blank"
-                    href={project.repo}
-                  >
-                    Repository
-                  </a>
+                  {project.repo && (
+                    <a
+                      className="projects__link projects__link--blue"
+                      target="_blank"
+                      href={project.repo}
+                    >
+                      Repository
+                    </a>
+                  )}
                   <a
                     className="projects__link"
                     target="_blank"

@@ -61,7 +61,7 @@ function Home() {
           className="homepage__paragraph"
         >
           I'm coding mainly in{" "}
-          <span className="homepage__accent--blue">React.js</span>.
+          <span className="homepage__accent--blue">React</span>.
         </motion.p>
         <motion.p
           variants={paragraph}

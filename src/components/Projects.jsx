@@ -17,7 +17,7 @@ function Projects() {
       shortDescription:
         "Fullstack application for browsing and sharing cooking recipes.",
       techs: [
-        "React.js",
+        "React",
         "Node.js",
         "Express",
         "MongoDB",
@@ -42,9 +42,9 @@ function Projects() {
     {
       title: "Todo",
       description:
-        "Todo App made in React.js. User can add, delete and check elements on the list. Also the theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
+        "Todo App made in React. User can add, delete and check elements on the list. Also the theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
       shortDescription: "Todo App made in React.",
-      techs: ["React.js", "Sass"],
+      techs: ["React", "Sass"],
       link: "https://zwiro.github.io/todo-app/",
       repo: "https://github.com/zwiro/todo-app",
       image: todoAppImage,

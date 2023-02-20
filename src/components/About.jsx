@@ -18,7 +18,7 @@ function About() {
       icon: <SiJavascript fill="#F7DF1E" />,
     },
     {
-      name: "React.js",
+      name: "React",
       icon: <SiReact fill="#61DAFB" />,
     },
     {

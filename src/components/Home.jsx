@@ -51,7 +51,7 @@ function Home() {
             Przemysław
           </span>{" "}
           and I'm an aspiring{" "}
-          <span className="homepage__accent--blue">front-end developer</span>.
+          <span className="homepage__accent--blue">front-end developer</span>
         </motion.h2>
         <motion.p
           variants={paragraph}
@@ -61,7 +61,7 @@ function Home() {
           className="homepage__paragraph"
         >
           I'm coding mainly in{" "}
-          <span className="homepage__accent--blue">React</span>.
+          <span className="homepage__accent--blue">React</span>
         </motion.p>
         <motion.p
           variants={paragraph}

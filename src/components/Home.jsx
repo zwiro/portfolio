@@ -7,8 +7,10 @@ import AnimatedText from "./AnimatedText"
 
 function Home() {
   const box = {
-    hidden: { scale: 0 },
-    show: { scale: 1, rotate: 360 },
+    show: {
+      scale: [0, 0.5, 1.2, 1],
+      rotate: 360,
+    },
   }
 
   const paragraph = {
@@ -21,7 +23,6 @@ function Home() {
         <motion.div
           variants={box}
           transition={{ duration: 1 }}
-          initial="hidden"
           animate="show"
           className="homepage__text-bg homepage__text-bg--primary"
         >
@@ -30,7 +31,6 @@ function Home() {
         <motion.div
           variants={box}
           transition={{ duration: 1.5 }}
-          initial="hidden"
           animate="show"
           className="homepage__text-bg homepage__text-bg--secondary"
         >
@@ -43,7 +43,7 @@ function Home() {
           variants={paragraph}
           initial="hidden"
           animate="show"
-          transition={{ duration: 1, delay: 3 }}
+          transition={{ duration: 1, delay: 4.5 }}
           className="homepage__subheader"
         >
           My name is{" "}
@@ -57,7 +57,7 @@ function Home() {
           variants={paragraph}
           initial="hidden"
           animate="show"
-          transition={{ duration: 1, delay: 3.3 }}
+          transition={{ duration: 1, delay: 4.8 }}
           className="homepage__paragraph"
         >
           I'm coding mainly in{" "}
@@ -67,7 +67,7 @@ function Home() {
           variants={paragraph}
           initial="hidden"
           animate="show"
-          transition={{ duration: 1, delay: 3.6 }}
+          transition={{ duration: 1, delay: 5.1 }}
           className="homepage__paragraph"
         >
           Currently I'm learning{" "}
@@ -78,7 +78,7 @@ function Home() {
           variants={paragraph}
           initial="hidden"
           animate="show"
-          transition={{ duration: 1, delay: 3.9 }}
+          transition={{ duration: 1, delay: 5.4 }}
           className="homepage__paragraph"
         >
           <span className="homepage__accent">Scroll down</span> to learn more

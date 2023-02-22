@@ -13,8 +13,10 @@ function AnimatedText({ text }) {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.4,
         duration: 1,
+        delay: 1,
+        when: "beforeChildren",
       },
     },
   }

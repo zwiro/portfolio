@@ -1,5 +1,5 @@
 import "../scss/projects.scss"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import recipebaseImage from "../assets/recipebase.png"
 import todoAppImage from "../assets/todoapp.png"
 import wordguesserImage from "../assets/wordguesser.png"

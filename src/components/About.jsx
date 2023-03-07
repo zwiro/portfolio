@@ -6,6 +6,7 @@ import {
   SiRedux,
   SiReact,
   SiJavascript,
+  SiTypescript,
 } from "react-icons/si"
 import Tilt from "react-parallax-tilt"
 import { motion } from "framer-motion"
@@ -41,6 +42,7 @@ function About() {
       name: "Redux",
       icon: <SiRedux fill="#ba8fff" />,
     },
+    { name: "TypeScript", icon: <SiTypescript fill="#3178c6" /> },
   ]
 
   const container = {

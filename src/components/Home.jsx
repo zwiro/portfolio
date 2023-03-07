@@ -21,6 +21,10 @@ function Home() {
     <section id="home" className="homepage">
       <div>
         <motion.div
+          drag
+          dragSnapToOrigin={true}
+          dragElastic={0.2}
+          whileDrag={{ scale: 1.2 }}
           variants={box}
           transition={{ duration: 1 }}
           animate="show"
@@ -29,6 +33,10 @@ function Home() {
           <Name />
         </motion.div>
         <motion.div
+          drag
+          dragSnapToOrigin={true}
+          dragElastic={0.2}
+          whileDrag={{ scale: 1.2 }}
           variants={box}
           transition={{ duration: 1.5 }}
           animate="show"
@@ -72,7 +80,7 @@ function Home() {
         >
           Currently I'm learning{" "}
           <span className="homepage__accent">TypeScript</span> and{" "}
-          <span className="homepage__accent--blue">Next.js</span>
+          <span className="homepage__accent--blue">Redux</span>
         </motion.p>
         <motion.p
           variants={paragraph}

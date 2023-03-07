@@ -17,22 +17,32 @@
     position: relative;
     height: 6rem;
     width: 10rem;
-    transform: translateX(-300%);
+    cursor: grab;
 
     @include lg-screen {
       height: 10rem;
       width: 18rem;
     }
 
-    &--primary {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    &--primary::after {
       background-color: $primary-pink;
-      animation: primary-box-animation 1s ease-in-out forwards 3s;
+      rotate: -15deg;
     }
 
     &--secondary {
-      background-color: $primary-blue;
       margin-left: 8rem;
-      animation: secondary-box-animation 1s ease-in-out forwards 3s;
+
+      &::after {
+        background-color: $primary-blue;
+        rotate: 20deg;
+      }
     }
   }
 

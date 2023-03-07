@@ -127,7 +127,7 @@
   }
 
   &__techs {
-    display: flex;
+    @include flex-center;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
@@ -155,7 +155,7 @@
   }
 
   &__links {
-    display: flex;
+    @include flex-center;
     gap: 1rem;
   }
 

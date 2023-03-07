@@ -1,8 +1,9 @@
 import "../scss/projects.scss"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import recipebaseImage from "../assets/recipebase.png"
 import todoAppImage from "../assets/todoapp.png"
 import wordguesserImage from "../assets/wordguesser.png"
+import reshopImage from "../assets/reshop.png"
 import otherImage from "../assets/github.png"
 import { useEffect, useState } from "react"
 import Container from "./Container"
@@ -39,15 +40,25 @@ function Projects() {
       repo: "https://github.com/zwiro/wordle-clone",
       image: wordguesserImage,
     },
+    // {
+    //   title: "Todo",
+    //   description:
+    //     "Todo App made in React. User can add, delete and check elements on the list. Also the theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
+    //   shortDescription: "Todo App made in React.",
+    //   techs: ["React", "Sass"],
+    //   link: "https://zwiro.github.io/todo-app/",
+    //   repo: "https://github.com/zwiro/todo-app",
+    //   image: todoAppImage,
+    // },
     {
-      title: "Todo",
+      title: "Reshop",
       description:
-        "Todo App made in React. User can add, delete and check elements on the list. Also the theme can be switched between light and dark mode. Design and challenge from frontendmentor.io.",
-      shortDescription: "Todo App made in React.",
-      techs: ["React", "Sass"],
-      link: "https://zwiro.github.io/todo-app/",
-      repo: "https://github.com/zwiro/todo-app",
-      image: todoAppImage,
+        "Shopping app made with React and TypeScript. The products are categorized and user can filter and sort products while browsing. It also has fully functioning cart, where user can add, remove and change amount of items inside it.",
+      shortDescription: "Todo App made with React and TypeScript.",
+      techs: ["React", "TypeScript", "Tailwind", "React-Router"],
+      link: "https://zwiro.github.io/reshop-app/",
+      repo: "https://github.com/zwiro/reshop-app",
+      image: reshopImage,
     },
     {
       title: "More",

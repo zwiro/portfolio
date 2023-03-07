@@ -1,9 +1,6 @@
 @use "variables" as *;
 #homepage-name {
-  animation: fill 1s ease forwards 3s,
-    rotate-animation 1s ease-in-out forwards 3s;
-  position: absolute;
-  transform: translateX(-10%);
+  animation: fill 1s ease forwards 3s;
 }
 
 #homepage-name path:nth-child(1) {
@@ -94,11 +91,5 @@
   }
   100% {
     fill: white;
-  }
-}
-
-@keyframes rotate-animation {
-  100% {
-    rotate: 15deg;
   }
 }

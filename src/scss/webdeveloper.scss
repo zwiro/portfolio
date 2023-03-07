@@ -1,8 +1,5 @@
 #homepage-webdev {
-  animation: fill 1s ease forwards 3s,
-    webdev-rotate-animation 1s ease-in-out forwards 3s;
-  position: absolute;
-  transform: translateY(-25%) translateX(-10%);
+  animation: fill 1s ease forwards 3s;
 }
 
 #homepage-webdev path:nth-child(1) {
@@ -78,11 +75,5 @@
   }
   100% {
     fill: white;
-  }
-}
-
-@keyframes webdev-rotate-animation {
-  100% {
-    rotate: -20deg;
   }
 }

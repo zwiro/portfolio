@@ -79,7 +79,7 @@ function Home() {
           className="homepage__paragraph"
         >
           Currently I'm learning{" "}
-          <span className="homepage__accent">TypeScript</span> and{" "}
+          <span className="homepage__accent">Next.js</span> and{" "}
           <span className="homepage__accent--blue">Redux</span>
         </motion.p>
         <motion.p

@@ -18,7 +18,7 @@ function Contact() {
     {
       name: "LinkedIn",
       icon: <AiFillLinkedin />,
-      link: "",
+      link: "https://www.linkedin.com/in/przemys%C5%82aw-%C5%BCyrek-b39718269/",
     },
     {
       name: "Facebook",

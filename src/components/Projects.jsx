@@ -2,6 +2,7 @@ import "../scss/projects.scss"
 import { motion } from "framer-motion"
 import recipebaseImage from "../assets/recipebase.png"
 import todoAppImage from "../assets/todoapp.png"
+import remindImage from "../assets/remind.png"
 import wordguesserImage from "../assets/wordguesser.png"
 import reshopImage from "../assets/reshop.png"
 import otherImage from "../assets/github.png"
@@ -31,15 +32,32 @@ function Projects() {
       image: recipebaseImage,
     },
     {
-      title: "Wordguesser",
+      title: "Remind",
       description:
-        "Wordle clone made in vanilla JavaScript. User types 5 letter words and then gets a feedback: yellow color means the letter is present in word but isn't on proper position and green color indicates that letter is correctly positioned.",
-      shortDescription: "Wordle clone made in vanilla JavaScript.",
-      techs: ["JavaScript"],
-      link: "https://zwiro.github.io/wordle-clone/",
-      repo: "https://github.com/zwiro/wordle-clone",
-      image: wordguesserImage,
+        "Calendar planning app made with React and TypeScript. It allows user to create, edit and delete events that are assigned to a date picked from the calendar. It has also light/dark theme switcher and prefered theme is saved to the local storage.",
+      shortDescription: "Calendar Planning App made with React and TypeScript.",
+      techs: [
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "Redux-Toolkit",
+        "Redux-Persist",
+        "Framer-Motion",
+      ],
+      link: "https://zwiro.github.io/remind-calendar-app/",
+      repo: "https://github.com/zwiro/remind-calendar-app",
+      image: remindImage,
     },
+    // {
+    //   title: "Wordguesser",
+    //   description:
+    //     "Wordle clone made in vanilla JavaScript. User types 5 letter words and then gets a feedback: yellow color means the letter is present in word but isn't on proper position and green color indicates that letter is correctly positioned.",
+    //   shortDescription: "Wordle clone made in vanilla JavaScript.",
+    //   techs: ["JavaScript"],
+    //   link: "https://zwiro.github.io/wordle-clone/",
+    //   repo: "https://github.com/zwiro/wordle-clone",
+    //   image: wordguesserImage,
+    // },
     // {
     //   title: "Todo",
     //   description:
@@ -54,7 +72,7 @@ function Projects() {
       title: "Reshop",
       description:
         "Shopping app made with React and TypeScript. The products are categorized and user can filter and sort products while browsing. It also has fully functioning cart, where user can add, remove and change amount of items inside it.",
-      shortDescription: "Todo App made with React and TypeScript.",
+      shortDescription: "Shopping store made with React and TypeScript.",
       techs: ["React", "TypeScript", "Tailwind", "React-Router"],
       link: "https://zwiro.github.io/reshop-app/",
       repo: "https://github.com/zwiro/reshop-app",

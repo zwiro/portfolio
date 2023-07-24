@@ -5,6 +5,7 @@ import todoAppImage from "../assets/todoapp.png"
 import remindImage from "../assets/remind.png"
 import wordguesserImage from "../assets/wordguesser.png"
 import reshopImage from "../assets/reshop.png"
+import kanbunnyImage from "../assets/kanbunny.png"
 import otherImage from "../assets/github.png"
 import { useEffect, useState } from "react"
 import Container from "./Container"
@@ -30,6 +31,24 @@ function Projects() {
       link: "https://recipebase-7qn0.onrender.com/",
       repo: "https://github.com/zwiro/mern-app-recipebase",
       image: recipebaseImage,
+    },
+    {
+      title: "kanbunny",
+      description:
+        "My fullstack application for creating kanban boards. I made it with Next.js, tRPC, Prisma and styled with Tailwind. User can sign up via GitHub, and then create projects, boards, lists, tasks and invite other users to cooperate.",
+      shortDescription: "Fullstack application for creating kanban boards.",
+      techs: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Next-Auth",
+        "Prisma",
+        "tRPC",
+        "Tailwind",
+      ],
+      link: "https://kanbunny.vercel.app/",
+      repo: "https://github.com/zwiro/kanbunny",
+      image: kanbunnyImage,
     },
     {
       title: "Remind",
@@ -68,16 +87,16 @@ function Projects() {
     //   repo: "https://github.com/zwiro/todo-app",
     //   image: todoAppImage,
     // },
-    {
-      title: "Reshop",
-      description:
-        "Shopping app made with React and TypeScript. The products are categorized and user can filter and sort products while browsing. It also has fully functioning cart, where user can add, remove and change amount of items inside it.",
-      shortDescription: "Shopping store made with React and TypeScript.",
-      techs: ["React", "TypeScript", "Tailwind", "React-Router"],
-      link: "https://zwiro.github.io/reshop-app/",
-      repo: "https://github.com/zwiro/reshop-app",
-      image: reshopImage,
-    },
+    // {
+    //   title: "Reshop",
+    //   description:
+    //     "Shopping app made with React and TypeScript. The products are categorized and user can filter and sort products while browsing. It also has fully functioning cart, where user can add, remove and change amount of items inside it.",
+    //   shortDescription: "Shopping store made with React and TypeScript.",
+    //   techs: ["React", "TypeScript", "Tailwind", "React-Router"],
+    //   link: "https://zwiro.github.io/reshop-app/",
+    //   repo: "https://github.com/zwiro/reshop-app",
+    //   image: reshopImage,
+    // },
     {
       title: "More",
       description: "Check out my other projects on my github.",
@@ -142,6 +161,7 @@ function Projects() {
       >
         {projects.map((project, i) => (
           <motion.div
+            tabIndex={0}
             variants={item}
             layout
             key={`${project}-${i}`}
@@ -154,26 +174,34 @@ function Projects() {
               e.stopPropagation()
               setActiveCard(i)
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.stopPropagation()
+                setActiveCard(i)
+              }
+            }}
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('${project.image}')`,
               backgroundPositionY: activeCard !== null && projectBgPosition,
             }}
           >
             <div className="projects__project-header">
-              <p className="projects__project-title">{project.title}</p>
+              <h3 className="projects__project-title">{project.title}</h3>
               {activeCard === null && (
                 <p className="projects__short-description">
                   {project.shortDescription}
                 </p>
               )}
               {activeCard === i && (
-                <AiOutlineClose
+                <motion.button
                   className="projects__project-close-btn"
                   onClick={(e) => {
                     e.stopPropagation()
                     setActiveCard(null)
                   }}
-                />
+                >
+                  <AiOutlineClose className="projects__project-close-icon" />
+                </motion.button>
               )}
             </div>
             {activeCard === i && (

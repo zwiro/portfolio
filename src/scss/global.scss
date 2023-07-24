@@ -28,6 +28,12 @@ section {
   min-height: 100svh; // if supported
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   width: 0.75rem;
   height: 0.75rem;

@@ -9,6 +9,7 @@ function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 640px)")
 
   const { scrollY } = useScroll()
+
   const [navHidden, setNavHidden] = useState()
 
   function update() {
@@ -24,8 +25,8 @@ function Navbar() {
   })
 
   const navVariants = {
-    visible: { opacity: 1, y: 0, pointerEvents: "all" },
-    hidden: { opacity: 0, y: -25, pointerEvents: "none" },
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   }
 
   return (
@@ -33,16 +34,17 @@ function Navbar() {
       className="navbar"
       variants={navVariants}
       animate={isDesktop && navHidden ? "hidden" : "visible"}
+      whileHover="visible"
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {isDesktop && (
         <Link to="home" href="#home" smooth spy>
-          <div className="navbar__logo">
+          <h1 className="navbar__logo">
             <div className="navbar__logo-bg">
               <span className="navbar__logo-text">zyrek.dev</span>
             </div>
             <div className="navbar__logo-bg navbar__logo-bg--second"></div>
-          </div>
+          </h1>
         </Link>
       )}
       {isDesktop ? (

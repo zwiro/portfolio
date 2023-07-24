@@ -78,9 +78,8 @@ function Home() {
           transition={{ duration: 1, delay: 5.1 }}
           className="homepage__paragraph"
         >
-          Currently I'm learning{" "}
-          <span className="homepage__accent">Next.js</span> and{" "}
-          <span className="homepage__accent--blue">Redux</span>
+          Check out my <span className="homepage__accent">projects</span> below
+          👇
         </motion.p>
         <motion.p
           variants={paragraph}

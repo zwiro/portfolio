@@ -56,12 +56,14 @@
     background-position: 50% 0%;
     background-size: cover;
 
-    &:hover {
+    &:hover,
+    &:focus {
       filter: brightness(1.5);
       background-position: bottom;
     }
 
-    &:hover .projects__short-description {
+    &:hover .projects__short-description,
+    &:focus .projects__short-description {
       opacity: 1 !important;
     }
 
@@ -74,7 +76,8 @@
       cursor: default;
       transition: background-position 10000ms !important;
 
-      &:hover {
+      &:hover,
+      &:focus {
         filter: none;
         scale: 1;
       }
@@ -112,18 +115,23 @@
   }
 
   &__project-close-btn {
-    fill: $primary-pink;
     position: absolute;
     scale: 1.5;
     right: 5%;
     top: 10%;
     cursor: pointer;
     transition: all 300ms ease-in-out;
+    background-color: transparent;
 
-    &:hover {
+    &:hover,
+    &:focus {
       scale: 2.25;
       rotate: 360deg;
     }
+  }
+
+  &__project-close-icon {
+    fill: $primary-pink;
   }
 
   &__techs {
@@ -168,7 +176,8 @@
     transition: all 300ms ease-in-out;
     border: 1px solid transparent;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: transparent;
       color: $primary-pink;
       border-color: $primary-pink;
@@ -177,7 +186,8 @@
     &--blue {
       background-color: $primary-blue;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-blue;
         border-color: $primary-blue;
       }

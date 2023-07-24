@@ -19,6 +19,10 @@
     padding-inline: 10rem;
   }
 
+  &:focus-within {
+    opacity: 1 !important;
+  }
+
   &__logo {
     display: flex;
     font-size: 1rem;
@@ -93,11 +97,13 @@
     color: unset;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $primary-blue;
     }
 
-    &:hover:after {
+    &:hover:after,
+    &:focus:after {
       position: absolute;
       content: " ";
       width: 0%;
